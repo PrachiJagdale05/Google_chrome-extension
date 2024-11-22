@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Search Recommender",
+    "version": "1.0",
+    "description": "Provides real-time recommendations for your searches.",
+    "permissions": ["activeTab", "scripting"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "host_permissions": ["https://*/*"],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
